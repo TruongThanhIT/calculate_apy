@@ -6,7 +6,7 @@ class CalculateAPY {
       apy = interestRate
       x = dayNumber
   */
-  double calculateAPYPerDayWithCompound(
+  static double calculateAPYInDaysWithCompound(
       double moneySaving, double interestRate, int dayNumber) {
     for (int i = 0; i < dayNumber; i++) {
       moneySaving += (moneySaving * interestRate / 100) / 365;
@@ -14,7 +14,7 @@ class CalculateAPY {
     return moneySaving;
   }
 
-  double calculateAPYPerMonthWithCompound(
+  static double calculateAPYInMonthWithCompound(
       double moneySaving, double interestRate, int monthNumber) {
     for (int i = 0; i < monthNumber; i++) {
       moneySaving += (moneySaving * interestRate / 100) / 12;
@@ -23,18 +23,16 @@ class CalculateAPY {
   }
 
   // originMoney * apy / 100
-  double calculateAPYPerYear(
-      double moneySaving, double interestRate, int dayNumber) {
+  static double calculateAPYPerYear(double moneySaving, double interestRate) {
     return moneySaving * interestRate / 100;
   }
 
-  double calculateAPYPerMonth(
-      double moneySaving, double interestRate, int dayNumber) {
-    return calculateAPYPerYear(moneySaving, interestRate, dayNumber) / 12;
+  static double calculateAPYPerMonth(double moneySaving, double interestRate) {
+    return calculateAPYPerYear(moneySaving, interestRate) / 12;
   }
 
-  double calculateAPYPerDay(
-      double moneySaving, double interestRate, int dayNumber) {
-    return calculateAPYPerYear(moneySaving, interestRate, dayNumber) / 365;
+  static double calculateAPYPerDay(double moneySaving, double interestRate) {
+    return calculateAPYPerYear(moneySaving, interestRate) / 365;
   }
+
 }
