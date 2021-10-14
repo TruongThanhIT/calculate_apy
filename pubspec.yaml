@@ -1,6 +1,6 @@
 name: calculate_apy
 description: Calculate APY (Annual Percentage Yield)
-version: 0.0.1
+version: 0.0.1+1
 homepage: https://github.com/TruongThanhIT/calculate_apy
 
 environment:
